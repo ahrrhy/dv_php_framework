@@ -1,0 +1,19 @@
+<?php /** @var \Blog\Block\PostList $this */ ?>
+<section id="products" aria-label="Products list">
+    <h1><?= $this->getPageTitle(); ?></h1>
+    <ul>
+        <?php /** @var \Blog\Model\Post $post */
+        foreach ($this->getPosts() as $post) :
+            ?>
+            <li>
+                <article>
+                    <h2>
+                        <a href="javascript:void(0);"><?= $post->getName() ?></a>
+                    </h2>
+                    <span class="short-description"><?= $post->getShortDescription() ?></span>
+                    <img src="<?= $post->getImage() ?>" alt="<?= $post->getName() ?>" />
+                </article>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</section>

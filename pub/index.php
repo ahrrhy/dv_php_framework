@@ -15,6 +15,9 @@ switch ($_SERVER['REQUEST_URI']) {
     case '/shop':
         $contentBlock = \Catalog\Block\Category::class;
         break;
+    case '/blog':
+        $contentBlock = \Blog\Block\PostList::class;
+        break;
     default:
         $foo = false;
         break;
